@@ -2,6 +2,10 @@ plugins {
     id 'com.android.application'
 }
 
+dependencies {
+    implementation files('libs/mysql-connectior-j-8.1.0.jar')
+}
+
 android {
     namespace 'com.alberto.ticketqr'
     compileSdk 33
