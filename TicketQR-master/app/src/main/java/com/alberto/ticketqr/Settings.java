@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.alberto.ticketqr.serverConnections.Connection;
+import com.alberto.ticketqr.serverConnections.ConnectionToSQL;
 
 public class Settings extends AppCompatActivity {
 
@@ -25,8 +25,8 @@ public class Settings extends AppCompatActivity {
         button = findViewById(R.id.submit);
         button.setOnClickListener(v -> {
             //leggi e chiama serverConnections
-            Connection connection = new Connection();
-            boolean state = connection.connect(inputText.getText().toString());
+            ConnectionToSQL connectionToSQL = new ConnectionToSQL();
+            boolean state = connectionToSQL.connect(inputText.getText().toString());
             if (state){
                 //assumiamo il server sia corretto, quindi procediamo,
                 Intent intent = new Intent(Settings.this, MainActivity.class);

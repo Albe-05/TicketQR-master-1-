@@ -1,6 +1,5 @@
 package com.alberto.ticketqr.serverConnections;
 
-import java.util.Random;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,19 +19,28 @@ public class Check {
             String query = "SELECT numero FROM biglietti WHERE codice = " + code;
             PreparedStatement statement = conn.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
-            if(resultSet.getString['stato'] == 0){
+
+            /*
+            switch (resultSet.getInt("stato")){
+                case 0: return 0;
+                case 1: return 1;
+                case 2: return 2;
+            }*/
+
+            if(resultSet.getInt("stato") == 0){
                 return 0;
             }
-            if(resultSet.getString['stato'] == 1){
+            if(resultSet.getInt("stato") == 1){
                 return 1;
             }
-            if(resultSet.getString['stato'] == 2){
+            if(resultSet.getInt("stato") == 2){
                 return 2;
             }
         }
         catch(SQLException e)
         {
-            return 0;
+            return 3;
         }
+        return 3;
     }
 }

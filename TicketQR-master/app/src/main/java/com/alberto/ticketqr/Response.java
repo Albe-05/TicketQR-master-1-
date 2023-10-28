@@ -59,6 +59,8 @@ public class Response extends AppCompatActivity {
                 case 2: relativeLayout.setBackgroundColor(Color.parseColor("#C6FF2121")); //rosso - già entrato
                     s = "Già entrato";
                     break;
+                case 3: readingError();
+                    break;
             }
 
             status.setText(s);
