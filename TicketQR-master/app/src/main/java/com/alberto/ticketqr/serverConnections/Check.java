@@ -20,21 +20,10 @@ public class Check {
             PreparedStatement statement = conn.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
-            /*
             switch (resultSet.getInt("stato")){
                 case 0: return 0;
                 case 1: return 1;
                 case 2: return 2;
-            }*/
-
-            if(resultSet.getInt("stato") == 0){
-                return 0;
-            }
-            if(resultSet.getInt("stato") == 1){
-                return 1;
-            }
-            if(resultSet.getInt("stato") == 2){
-                return 2;
             }
         }
         catch(SQLException e)

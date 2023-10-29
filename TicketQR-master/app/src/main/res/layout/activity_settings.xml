@@ -25,6 +25,6 @@
         android:ems="10"
         android:textSize="25sp"
         android:inputType="text"
-        android:text="jdbc:mysql://localhost:3306/biglietto_db" />
+        android:text="jdbc:mysql://IP_SERVER:3306/biglietto_db" />
 
 </RelativeLayout>
